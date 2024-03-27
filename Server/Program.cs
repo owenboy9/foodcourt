@@ -19,7 +19,7 @@ try
     
 
     app.MapGet("/", Greet);
-    //app.MapGet("/users", AllUsers);
+    app.MapGet("/users", Users.All);
 
     app.Run();
 
@@ -32,40 +32,6 @@ catch (MySqlException e)
 finally
 {
     db?.Close();
-}
-
-
-string AllUsers(State state)
-{
-    string result = string.Empty;
-    string query = "SELECT * FROM users";
-    MySqlCommand command = new(query, state.DB);
-
-    using MySqlDataReader reader = command.ExecuteReader();
-
-    while (reader.Read())
-    {
-        int id = reader.GetInt32("id");
-        string username = reader.GetString("username");
-        result += $"{username} has the id: {id}\n";
-    }
-    return result;
-}
-
-string Login(User credentials, Dictionary<string, string> state)
-{
-    if (credentials.Email == "manuel@nodehill.com" && credentials.Password == "password123")
-    {
-        state.Remove("signed-in");
-        state.Add("signed-in", "true");
-        return "Signed in\n";
-    }
-    else
-    {
-        state.Remove("signed-in");
-        state.Add("signed-in", "false");
-        return "Not signed in\n";
-    }
 }
 
 
