@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owenk\\source\\repos\\foodcourt\\Server\\Server.csproj": {}
+    "C:\\Users\\owenk\\source\\repos\\foodcourt\\server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owenk\\source\\repos\\foodcourt\\Server\\Server.csproj": {
+    "C:\\Users\\owenk\\source\\repos\\foodcourt\\server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owenk\\source\\repos\\foodcourt\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\owenk\\source\\repos\\foodcourt\\server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\owenk\\source\\repos\\foodcourt\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\owenk\\source\\repos\\foodcourt\\server\\Server.csproj",
         "packagesPath": "C:\\Users\\owenk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owenk\\source\\repos\\foodcourt\\Server\\obj\\",
+        "outputPath": "C:\\Users\\owenk\\source\\repos\\foodcourt\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\owenk\\AppData\\Roaming\\NuGet\\NuGet.Config",

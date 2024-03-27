@@ -7,14 +7,6 @@ MySqlConnection? db = null;
 string connectionString = "server=localhost;uid=root;pwd=mypassword;database=seeSharp;port=3306";
 var builder = WebApplication.CreateBuilder(args);
 
-// This lets us access a global state in all our routes that is shared
-
-
-
-
-
-// app.MapGet("/search/{query}", Query);
-
 
 try
 {
@@ -22,14 +14,14 @@ try
     db.Open();
     builder.Services.AddSingleton(new State(db));
     var app = builder.Build();
-    app.MapPost("/login", Login);
+    //app.MapPost("/login", Login);
 
     
 
-    app.MapGet("/", () => "Hello World!");
-    app.MapGet("/users", AllUsers);
+    app.MapGet("/", Greet);
+    //app.MapGet("/users", AllUsers);
 
-    app.Run("http://localhost:3000");
+    app.Run();
 
 
 }
@@ -41,6 +33,7 @@ finally
 {
     db?.Close();
 }
+
 
 string AllUsers(State state)
 {
@@ -73,4 +66,10 @@ string Login(User credentials, Dictionary<string, string> state)
         state.Add("signed-in", "false");
         return "Not signed in\n";
     }
+}
+
+
+string Greet()
+{
+    return "welcome to out food court!";
 }

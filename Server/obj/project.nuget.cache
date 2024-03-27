@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fFeM1R7PeWXF4v12RZ0U99tJUgEELe8vpHcoR3I6HgW+5nVc3SqeZx+Pnl7iIjBk8c3oEyskVjswenSKBShfmQ==",
+  "dgSpecHash": "udmV1lmWZKMdaUcJEeUsBvubn1DmuEL7XDijJKd+7i7LrZr0x6Bfv02NNnMM3GTuiehQ+8oVsxjtDEO0c30TIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\owenk\\source\\repos\\foodcourt\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\owenk\\source\\repos\\foodcourt\\server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\owenk\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\owenk\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
