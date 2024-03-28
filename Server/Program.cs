@@ -23,7 +23,6 @@ try
 
     app.Run();
 
-
 }
 catch (MySqlException e)
 {
