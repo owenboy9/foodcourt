@@ -24,4 +24,24 @@ public class Foods
         }
         return result;
     }
+
+    public static string Category(State state)
+    {
+
+        string result = string.Empty;
+        string query = "SELECT name, category FROM foods WHERE category = 'indian'";
+        MySqlCommand command = new(query, state.DB);
+
+
+        using MySqlDataReader reader = command.ExecuteReader();
+
+        while (reader.Read())
+        {
+            string name = reader.GetString("name");
+            string category = reader.GetString("category");
+            result += $"{name}\n Category: {category}\n\n";
+        }
+        return result;
+    }
 }
+

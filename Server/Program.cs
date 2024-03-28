@@ -22,6 +22,7 @@ try
     app.MapGet("/users", Users.All);
     app.MapGet("/restaurants", Restaurants.All);
     app.MapGet("/foods", Foods.All);
+    app.MapGet("/categories", Foods.Category);
 
     app.Run();
 
