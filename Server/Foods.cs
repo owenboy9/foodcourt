@@ -17,7 +17,10 @@ public class Foods
         {
             int id = reader.GetInt32("id");
             string name = reader.GetString("name");
-            result += $"{name} has the id: {id}\n";
+            string category = reader.GetString("category");
+            string description = reader.GetString("description");
+            double price = reader.GetDouble("price");
+            result += $"{name}: {category}\n{description}\n${price}\n\n";
         }
         return result;
     }
