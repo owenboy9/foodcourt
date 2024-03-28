@@ -20,6 +20,7 @@ try
 
     app.MapGet("/", Greet);
     app.MapGet("/users", Users.All);
+    app.MapGet("/restaurants", Restaurants.All);
 
     app.Run();
 
