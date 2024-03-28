@@ -13,6 +13,7 @@ try
     db = new MySqlConnection(connectionString);
     db.Open();
     builder.Services.AddSingleton(new State(db));
+    builder.Services.AddAuthentication().AddCookie("opa23.molez.foodcourt");
     var app = builder.Build();
     //app.MapPost("/login", Login);
 
@@ -22,7 +23,9 @@ try
     app.MapGet("/users", Users.All);
     app.MapGet("/restaurants", Restaurants.All);
     app.MapGet("/foods", Foods.All);
-    app.MapGet("/categories", Foods.Category);
+    app.MapGet("/categories/{food_category}", Foods.Category);
+    app.MapGet("/preferences/{alternative}", Foods.Preference);
+    app.MapPost("/login", Auth.Login);
 
     app.Run();
 

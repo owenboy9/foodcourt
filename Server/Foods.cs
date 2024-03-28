@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using static Server.Auth;
 
 namespace Server;
 
@@ -25,12 +26,13 @@ public class Foods
         return result;
     }
 
-    public static string Category(State state)
+    public static string Category(string food_category, State state)
     {
 
         string result = string.Empty;
-        string query = "SELECT name, category FROM foods WHERE category = 'indian'";
+        string query = "SELECT name, category, price FROM foods WHERE category = @Category";
         MySqlCommand command = new(query, state.DB);
+        command.Parameters.AddWithValue("@Category", food_category);
 
 
         using MySqlDataReader reader = command.ExecuteReader();
@@ -39,7 +41,29 @@ public class Foods
         {
             string name = reader.GetString("name");
             string category = reader.GetString("category");
-            result += $"{name}\n Category: {category}\n\n";
+            double price = reader.GetDouble("price");
+            result += $"{name}\n Category: {category}\n${price}\n\n";
+        }
+        return result;
+    }
+
+    public static string Preference(string alternative, State state)
+    {
+
+        string result = string.Empty;
+        string query = "SELECT name, preference, price FROM foods WHERE preference = @Preference";
+        MySqlCommand command = new(query, state.DB);
+        command.Parameters.AddWithValue("@Preference", alternative);
+
+
+        using MySqlDataReader reader = command.ExecuteReader();
+
+        while (reader.Read())
+        {
+            string name = reader.GetString("name");
+            string preference = reader.GetString("preference");
+            double price = reader.GetDouble("price");
+            result += $"{name}\n dietary option: {preference}\n${price}\n\n";
         }
         return result;
     }
